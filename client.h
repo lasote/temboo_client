@@ -25,7 +25,7 @@ class TembooClient{
 		//Choreos
 		shared_ptr<LambdaRequest> list_choreos(JSON_F ret_cb, ERR_F err_cb);
 		shared_ptr<LambdaRequest> details_choreos(JSON_F ret_cb, ERR_F err_cb, string choreos_id);
-		shared_ptr<LambdaRequest> run_choreos(JSON_F ret_cb, ERR_F err_cb, string choreos_id);
+		shared_ptr<LambdaRequest> run_choreos(JSON_F ret_cb, ERR_F err_cb, string choreos_id, vector<pair<string, string>> params);
 
 		//Executions
 		shared_ptr<LambdaRequest> list_choreos_executions(JSON_F ret_cb, ERR_F err_cb);

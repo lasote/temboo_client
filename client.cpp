@@ -16,9 +16,19 @@ shared_ptr<LambdaRequest> TembooClient::details_choreos(JSON_F ret_cb, ERR_F err
     return call_get(path, ret_cb, err_cb);
 }
 
-shared_ptr<LambdaRequest> TembooClient::run_choreos(JSON_F ret_cb, ERR_F err_cb, string choreos_id){
+shared_ptr<LambdaRequest> TembooClient::run_choreos(JSON_F ret_cb, ERR_F err_cb, string choreos_id, vector<pair<string, string>> params){
 	string path = "/choreos/" + choreos_id;
-    return call_post(path, "", ret_cb, err_cb);
+    string body = "{\"inputs\": [";
+
+    for (std::vector<pair<string, string>>::iterator it = params.begin() ; it != params.end(); ++it){
+    	string name = it->first;
+    	string value = it->second;
+    	body+=" {\"name\": \"" + name + "\",\"value\": \"" + value +"\"}";
+    }
+  	body += "]}";
+	
+
+    return call_post(path, body, ret_cb, err_cb);
 }
 
 
