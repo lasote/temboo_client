@@ -1,5 +1,7 @@
 # C++ Temboo Client
 
+[![Build status](https://ci.appveyor.com/api/projects/status/h63fyc99s50y5dtn?svg=true)](https://ci.appveyor.com/project/lasote/temboo-client)
+
 [Temboo Client](https://www.temboo.com/restapi/reference) implementation with C++11 using lambda functions for callbacks.
 
 This library is hosted in **[Biicode](http://www.biicode.com) C++ dependency manager**.
