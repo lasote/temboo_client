@@ -34,7 +34,7 @@ script:
 - ls ./bin/lasote_temboo_client_example_main
 after_success:
 - bii user lasote -p $BII_LASOTE_PASSWORD
-- bii publish
+- bii publish || echo "Ignored publish output..."
 env:
   global:
     secure: EedLi6JmkItm40WcSElEGgX3OFk4w1rxyPC33ADfbB53ce6i+xuEZWthPDAinZHfTqAHFdiaj+7hltRR4MOguLz/mhH5xveCLk4oaWhJlT48oIYEtUw+42pCZIYy0BpTrKyoe4RuZZCMcqq9igyD3Z3AoiXMwb++g93bSdh4DKA=
