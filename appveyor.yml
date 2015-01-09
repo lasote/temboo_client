@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 environment:
-  my_variable:
+  secured_passwd:
     secure: lBislJUl6RP/4mh6NOGZcA==
 
 install:
@@ -30,7 +30,7 @@ build_script:
   - cmd: bii cpp:build
 
 test_script:
-  - cmd: bin\lasote_temboo_client_example_main.exe
+  - cmd: ls bin\lasote_temboo_client_example_main.exe
 
 # to run your custom scripts instead of provider deployments
 deploy_script:
