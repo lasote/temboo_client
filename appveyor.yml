@@ -22,7 +22,8 @@ before_build:
   - cmd: bii init myproject
   - cmd: cd myproject
   - cmd: bii new lasote/temboo_client
-  - cmd: xcopy ..\* blocks\lasote\temboo_client\ /s /e  
+  - cmd: move ..\* blocks\lasote\temboo_client\
+  - cmd: move ..\example blocks\lasote\temboo_client\
   - cmd: bii cpp:configure -G "Visual Studio 12"
 
 build_script:
