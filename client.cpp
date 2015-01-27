@@ -90,7 +90,11 @@ shared_ptr<LambdaRequest> TembooClient::call_post(string path, string body, JSON
 	request.body = body;
 	std::pair<string,string> content_type("Content-Type", "application/json");
     request.headers.insert(content_type);
-    std::pair<string,string> content_len("Content-Length", to_string(body.length()));
+	
+	stringstream ss;
+	ss << body.length();
+	
+    std::pair<string,string> content_len("Content-Length", ss.str());
     request.headers.insert(content_len);
 
     return call_and_parse_response(request, ret_cb, err_cb, on_body_cb);
